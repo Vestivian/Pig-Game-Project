@@ -20,7 +20,8 @@ const btnHold = document.querySelector(`.btn--hold`);
 
 let scores, currentScore, activePlayer, playing;
 
-const init = function () {
+//Renaming because can't use pestaicide extension with it named init
+const initilize = function () {
   scores = [0, 0];
   currentScore = 0;
   activePlayer = 0;
@@ -37,7 +38,7 @@ const init = function () {
   player0ELe.classList.add(`player--active`);
   player1ELe.classList.remove(`player--active`);
 };
-init();
+initilize();
 
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -88,4 +89,4 @@ btnHold.addEventListener(`click`, function () {
 
 //New Game
 
-btnNew.addEventListener(`click`, init);
+btnNew.addEventListener(`click`, initilize);
