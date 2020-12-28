@@ -45,12 +45,14 @@ main {
 }
 
 .modal {
+  background-color: rgba(255, 255, 255, 0.488);
   padding: 1.5rem;
 }
 
 .btn--instructions,
 .modal {
   margin: 0.5rem;
+  z-index: 10;
 }
 
 main {
@@ -59,11 +61,11 @@ main {
   height: 60rem;
   overflow: hidden;
   display: flex;
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 .modal,
 main {
-  background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
   filter: blur();
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
@@ -97,8 +99,7 @@ main {
   margin-bottom: auto;
 }
 
-.player--active,
-.modal {
+.player--active {
   background-color: rgba(255, 255, 255, 0.4);
 }
 .player--active .name {
@@ -196,7 +197,9 @@ main {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
 
-.btn:focus {
+.btn:focus,
+.btn--instructions:focus,
+.btn--close-modal:focus {
   outline: none;
 }
 
@@ -231,5 +234,5 @@ main {
   height: 100%;
   opacity: 0.6;
   backdrop-filter: blur(3px);
-  z-index: 2;
+  z-index: 5;
 }

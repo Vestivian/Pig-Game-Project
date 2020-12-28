@@ -14,7 +14,32 @@ const diceElement = document.querySelector(`.dice`);
 const btnNew = document.querySelector(`.btn--new`);
 const btnRoll = document.querySelector(`.btn--roll`);
 const btnHold = document.querySelector(`.btn--hold`);
-//const btnInstruct = document.querySelector //they're classes both of them
+const btnOpen = document.querySelector(`.btn--instructions`);
+const btnClose = document.querySelector(`.btn--close-modal`);
+
+const modal = document.querySelector(`.modal`);
+const overlay = document.querySelector(`.overlay`);
+
+//Instruction modal
+const openCloseModal = function () {
+  modal.classList.toggle(`hidden`);
+  overlay.classList.toggle(`hidden`);
+};
+
+//Traditional open and close
+btnOpen.addEventListener(`click`, openCloseModal);
+btnClose.addEventListener(`click`, openCloseModal);
+
+//Hit Escape to close
+document.addEventListener(`keydown`, function (event) {
+  if (event.key === `Escape` && !modal.classList.contains(`hidden`)) {
+    openCloseModal();
+  }
+});
+
+//Close by pressing anywhere on the overlay
+
+overlay.addEventListener(`click`, openCloseModal);
 
 //Starting Set-up
 
